@@ -185,7 +185,8 @@ static NSMutableArray* currentAlertArray = nil;
     [alertView addSubview:iconImage];
     
     UILabel* titleLabel = [UILabel new];
-    titleLabel.frame = CGRectMake((kDefaulInset*2.f) + _iconImageSize.width, kDefaulInset, self.view.frame.size.width - ((kDefaulInset*3.f) + _iconImageSize.width), _titleLabelHeight);
+    CGFloat kTitleInset = _messageLabelHeight == 0 ? (_alertViewHeight - _titleLabelHeight)/2 : kDefaulInset;
+    titleLabel.frame = CGRectMake((kDefaulInset*2.f) + _iconImageSize.width, kTitleInset, self.view.frame.size.width - ((kDefaulInset*3.f) + _iconImageSize.width), _titleLabelHeight);
     titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     titleLabel.textAlignment = NSTextAlignmentLeft;
     titleLabel.numberOfLines = 0;
@@ -195,7 +196,8 @@ static NSMutableArray* currentAlertArray = nil;
     [alertView addSubview:titleLabel];
     
     UILabel* messageLabel = [UILabel new];
-    messageLabel.frame = CGRectMake((kDefaulInset*2.f) + _iconImageSize.width, kDefaulInset + _titleLabelHeight + 3.f, self.view.frame.size.width - ((kDefaulInset*3.f) + _iconImageSize.width), _messageLabelHeight);
+    CGFloat kMessageInset = _titleLabelHeight == 0 ? (_alertViewHeight - _messageLabelHeight)/2 : kDefaulInset + _titleLabelHeight + 3.f;
+    messageLabel.frame = CGRectMake((kDefaulInset*2.f) + _iconImageSize.width, kMessageInset, self.view.frame.size.width - ((kDefaulInset*3.f) + _iconImageSize.width), _messageLabelHeight);
     messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
     messageLabel.textAlignment = NSTextAlignmentLeft;
     messageLabel.numberOfLines = 0;
