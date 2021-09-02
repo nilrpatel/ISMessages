@@ -426,9 +426,10 @@ static NSMutableArray* currentAlertArray = nil;
 - (void)configureViewForAlertType:(ISAlertType)alertType iconImage:(UIImage*)iconImage {
     
     self.titleLabelTextColor = [UIColor whiteColor];
-    self.messageLabelTextColor = [UIColor whiteColor];
+    self.messageLabelTextColor = [UIColor blackColor];
     self.titleLabelFont = [UIFont systemFontOfSize:15.f weight:UIFontWeightMedium];
-    self.messageLabelFont = [UIFont systemFontOfSize:15.f];
+    self.messageLabelFont = [UIFont systemFontOfSize:16.f];
+//    self.messageLabelFont = [UIFont fontWithName:@"Roboto-Medium" size:20.f];
     
     self.iconImage = iconImage;
     
@@ -455,7 +456,7 @@ static NSMutableArray* currentAlertArray = nil;
             break;
         }
         case ISAlertTypeInfo: {
-            self.alertViewBackgroundColor = [UIColor colorWithRed:75.f/255.f green:107.f/255.f blue:122.f/255.f alpha:1.f];
+            self.alertViewBackgroundColor = [UIColor whiteColor];//[UIColor colorWithRed:75.f/255.f green:107.f/255.f blue:122.f/255.f alpha:1.f];
             if (!_iconImage) {
                 self.iconImage = [self imageNamed:@"isInfoIcon"];
             }
