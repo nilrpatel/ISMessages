@@ -133,7 +133,6 @@ static NSMutableArray* currentAlertArray = nil;
     self.titleLabelHeight = ceilf([self preferredHeightForTitleString:_titleString]);
     self.alertViewHeight = kDefaulInset + _titleLabelHeight + 3.f + _messageLabelHeight + kDefaulInset;
     
-    
     if (_alertViewHeight < kDefaultCardViewHeight) {
         self.alertViewHeight = kDefaultCardViewHeight;
     }
@@ -181,6 +180,7 @@ static NSMutableArray* currentAlertArray = nil;
     
     UIImageView* iconImage = [[UIImageView alloc] initWithFrame:CGRectMake(kDefaulInset, (_alertViewHeight - _iconImageSize.height) / 2.f, _iconImageSize.width, _iconImageSize.height)];
     iconImage.contentMode = UIViewContentModeScaleAspectFit;
+    iconImage.tintColor = [UIColor blackColor];
     iconImage.image = _iconImage;
     [alertView addSubview:iconImage];
     
