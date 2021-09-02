@@ -425,7 +425,7 @@ static NSMutableArray* currentAlertArray = nil;
 
 - (void)configureViewForAlertType:(ISAlertType)alertType iconImage:(UIImage*)iconImage {
     
-    self.titleLabelTextColor = [UIColor whiteColor];
+    self.titleLabelTextColor = [UIColor blackColor];
     self.messageLabelTextColor = [UIColor blackColor];
     self.titleLabelFont = [UIFont systemFontOfSize:15.f weight:UIFontWeightMedium];
     self.messageLabelFont = [UIFont systemFontOfSize:16.f];
