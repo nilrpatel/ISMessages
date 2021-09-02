@@ -8,8 +8,8 @@
 
 #import "ISMessages.h"
 
-static CGFloat const kDefaultCardViewHeight = 51.f;
-static CGFloat const kDefaulInset = 8.f;
+static CGFloat const kDefaultCardViewHeight = 65.f;
+static CGFloat const kDefaulInset = 16.f;
 
 @interface ISMessages ()
 
@@ -131,7 +131,7 @@ static NSMutableArray* currentAlertArray = nil;
     
     self.messageLabelHeight = ceilf([self preferredHeightForMessageString:_messageString]);
     self.titleLabelHeight = ceilf([self preferredHeightForTitleString:_titleString]);
-    self.alertViewHeight = kDefaulInset + _titleLabelHeight + 3.f + _messageLabelHeight + 8.f;
+    self.alertViewHeight = kDefaulInset + _titleLabelHeight + 3.f + _messageLabelHeight + kDefaulInset;
     
     
     if (_alertViewHeight < kDefaultCardViewHeight) {
