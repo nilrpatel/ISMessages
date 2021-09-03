@@ -98,8 +98,8 @@
             }
             
             if (indexPath.row == 4) {
-                ISMessages* alert = [ISMessages cardAlertWithTitle:@"This is custom alert with callback"
-                                                           message:@"This is custom alert with custom image, fonts, font colors, background color"
+                ISMessages* alert = [ISMessages cardAlertWithTitle:@""
+                                                           message:@"The data for this course is not yet available. Please select another course."
                                                          iconImage:[UIImage imageNamed:@"Icon-40"]
                                                           duration:3.f
                                                        hideOnSwipe:YES
@@ -107,10 +107,10 @@
                                                          alertType:ISAlertTypeCustom
                                                      alertPosition:@(!_positionSwitcher.isOn).integerValue];
                 
-                alert.titleLabelFont = [UIFont boldSystemFontOfSize:15.f];
+                alert.titleLabelFont = [UIFont boldSystemFontOfSize:25.f];
                 alert.titleLabelTextColor = [UIColor blackColor];
                 
-                alert.messageLabelFont = [UIFont italicSystemFontOfSize:13.f];
+                alert.messageLabelFont = [UIFont italicSystemFontOfSize:25.f];
                 alert.messageLabelTextColor = [UIColor whiteColor];
                 
                 alert.alertViewBackgroundColor = [UIColor colorWithRed:96.f/255.f green:184.f/255.f blue:237.f/255.f alpha:1.f];

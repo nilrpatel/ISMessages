@@ -193,6 +193,7 @@ static NSMutableArray* currentAlertArray = nil;
     titleLabel.textColor = _titleLabelTextColor;
     titleLabel.font = _titleLabelFont;
     titleLabel.text = _titleString;
+    [titleLabel sizeToFit];
     [alertView addSubview:titleLabel];
     
     UILabel* messageLabel = [UILabel new];
@@ -204,6 +205,7 @@ static NSMutableArray* currentAlertArray = nil;
     messageLabel.textColor = _messageLabelTextColor;
     messageLabel.font = _messageLabelFont;
     messageLabel.text = _messageString;
+    [messageLabel sizeToFit];
     [alertView addSubview:messageLabel];
     
     if (_hideOnSwipe) {
@@ -381,9 +383,7 @@ static NSMutableArray* currentAlertArray = nil;
     paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
     paragraphStyle.alignment = NSTextAlignmentLeft;
     
-    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-    
-    CGFloat messageHeight = [message boundingRectWithSize:CGSizeMake(screenWidth - 40.f - _iconImageSize.height, CGFLOAT_MAX)
+    CGFloat messageHeight = [message boundingRectWithSize:CGSizeMake(self.view.frame.size.width - ((kDefaulInset*3.f) + _iconImageSize.width), CGFLOAT_MAX)
                                                   options:NSStringDrawingUsesLineFragmentOrigin
                                                attributes:@{NSParagraphStyleAttributeName : paragraphStyle,
                                                             NSFontAttributeName : _messageLabelFont}
@@ -403,9 +403,7 @@ static NSMutableArray* currentAlertArray = nil;
     paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
     paragraphStyle.alignment = NSTextAlignmentLeft;
     
-    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-    
-    CGFloat titleHeight = [title boundingRectWithSize:CGSizeMake(screenWidth - 40.f - _iconImageSize.height, CGFLOAT_MAX)
+    CGFloat titleHeight = [title boundingRectWithSize:CGSizeMake(self.view.frame.size.width - ((kDefaulInset*3.f) + _iconImageSize.width), CGFLOAT_MAX)
                                                   options:NSStringDrawingUsesLineFragmentOrigin
                                                attributes:@{NSParagraphStyleAttributeName : paragraphStyle,
                                                             NSFontAttributeName : _titleLabelFont}
